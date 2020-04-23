@@ -133,22 +133,35 @@ function Draw(x, y, isDown) {
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(x, y);
         ctx.closePath();
-        ctx.strokeStyle= "black";
-        ctx.shadowColor= "black";
-        
+        ctx.strokeStyle= getSelectedColor();
+        ctx.shadowColor= getSelectedColor();
         ctx.shadowOffsetX=0;
         ctx.shadowOffsetY=0;
         ctx.shadowBlur=10;
-        ctx.lineWidth = 25;
+        ctx.lineWidth = getWidthOfPainting();
         ctx.lineJoin = ctx.lineCap = 'round';
         ctx.stroke();
-
-      
     }
     lastX = x;
     lastY = y;
 }
 
+function getSelectedColor(){
+  return $('#canvasColor').val();
+}
+
+function getWidthOfPainting(){
+  console.log($('#canvasStrokeWidth').val());
+  return $('#canvasStrokeWidth').val();
+}
+
+function saveCanvas(){
+var c=document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var d=c.toDataURL("image/png");
+var w=window.open('about:blank','image from canvas');
+w.document.write("<img src='"+d+"' alt='from canvas'/>");
+}
 
 function clearArea() {
     // Use the identity matrix while clearing the canvas
@@ -157,7 +170,10 @@ function clearArea() {
 }
 
 
+
+
 $(document).ready(function () {
     InitThis();
+    $( ".project" ).draggable();
 });
 

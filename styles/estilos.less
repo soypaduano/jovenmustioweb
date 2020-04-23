@@ -6,6 +6,7 @@
 
 * {
   cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=),auto;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body{
@@ -24,7 +25,6 @@ body{
   left: -100px;
 }
 
-
 header{
   position: fixed;
   top: 0;
@@ -33,36 +33,33 @@ header{
 }
 
 .header {
-    background: @color-red;
     color: white;
     text-align: left;
     height: 50px;	
     overflow: hidden;
-    background: @color-blue;
+    background: @color-black;
     color: @color-white;
-    border: 1px solid @color-black;
+    border: 1px solid @color-white;
   }
 
   .header h2{
     position: absolute;
-    width: 150%;
-    height: 100%;
+    width: 190%;
+    height: 40%;
     margin: 0;
     line-height: 50px;
     text-align: center;
     letter-spacing: 3px;
+    font-size: 35px;
     /* Starting position */
     -moz-transform:translateX(100%);
     -webkit-transform:translateX(100%);	
     transform:translateX(100%);
     /* Apply animation to this element */	
-    -moz-animation: scroll-left 15s linear infinite;
-    -webkit-animation: scroll-left 15s linear infinite;
-    animation: scroll-left 15s linear infinite;
-    font-size: 40px;
+    -moz-animation: scroll-left 20s linear infinite;
+    -webkit-animation: scroll-left 20s linear infinite;
+    animation: scroll-left 20s linear infinite;
   }
-
-  
         /* Move it (define the animation) */
         @-moz-keyframes scroll-left {
           0%   { -moz-transform: translateX(100%); }
@@ -92,9 +89,46 @@ header{
  .controlsHeader{
    width: 100%;
    background-color: @color-red;
-   height: 50px;
+   height: 70px;
+   display: inline-flex;
+ }
+
+ .controlsHeader .left-inputs-container1{
+   width: 50%;
+  cursor: pointer;
+ }
+
+ .controlsHeader .biography {
+   width: 50%;
+   background-color: @color-yellow;
+ }
+
+ .controlsHeader .biography p {
+   margin: 0;
+   color: @color-black;
    border-color: @color-black;
-   border-bottom: 2px solid black;
+   border-style: double;
+   border-width:  4px;
+ }
+
+ input[type=radio] {
+   width: 15px;
+   height: 15px;
+   cursor: pointer;
+   background-color: @color-yellow;
+   margin: 0;
+ }
+
+ input{
+  display: inline-flex;
+  cursor: pointer;
+  margin-left: 3%;
+ }
+
+ .fakeUnderHeader{
+   background: @color-white;
+   height: 130px;
+   width: 100%;
  }
 
  .mainContainer{
@@ -105,7 +139,19 @@ header{
  }
  
  .project{
-   height: 200px;
-   width: 200px;
-   background: yellow;
+   height: 400px;
+   width: 300px;
+   background: @color-white;
+   position: fixed;
+   left: 500px;
+   cursor: move;
+   display: none;
+   -webkit-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
+ }
+
+ #myCanvas{
+   border: 2px inset;
+   margin-top: 1%;
  }
