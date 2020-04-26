@@ -1,3 +1,7 @@
+@font-face {
+  font-family: linebeam;
+  src: url(../fuentes/linear_beam/Linebeam.ttf);
+}
 * {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
   font-family: 'Source Sans Pro', sans-serif;
@@ -93,10 +97,15 @@ header {
 .controlsHeader .left-inputs-container1 {
   width: 50%;
   cursor: pointer;
+  align-content: center;
+  border: 3px solid black;
 }
 .controlsHeader .biography {
   width: 50%;
   background-color: #FAFA10;
+  color: #000000;
+  border-color: #000000;
+  border-style: double;
 }
 .controlsHeader .biography p {
   margin: 0;
@@ -112,10 +121,21 @@ input[type=radio] {
   background-color: #FAFA10;
   margin: 0;
 }
+.controlsHeader .left-inputs-container1 p {
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+}
+.controlsHeader .left-inputs-container1 input[type=button] {
+  height: 50%;
+  border: 2px solid black;
+}
 input {
   display: inline-flex;
   cursor: pointer;
-  margin-left: 3%;
+  margin-left: 2%;
+  font-family: linebeam;
+  margin-top: 1%;
 }
 .fakeUnderHeader {
   background: #FFFFFF;
@@ -129,8 +149,8 @@ input {
   text-align: center;
 }
 .project {
-  height: 400px;
-  width: 300px;
+  height: 500px;
+  width: 400px;
   background: #FFFFFF;
   position: fixed;
   left: 500px;
@@ -141,6 +161,6 @@ input {
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
 }
 #myCanvas {
-  border: 2px inset;
+  border: 10px inset #103AFA;
   margin-top: 1%;
 }

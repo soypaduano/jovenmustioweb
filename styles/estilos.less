@@ -4,9 +4,15 @@
 @color-black: #000000;
 @color-yellow: #FAFA10;
 
+@font-face {
+  font-family: linebeam;
+  src: url(../fuentes/linear_beam/Linebeam.ttf);
+}
+
 * {
   cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=),auto;
   font-family: 'Source Sans Pro', sans-serif;
+  //font-family: linebeam;
 }
 
 body{
@@ -96,11 +102,16 @@ header{
  .controlsHeader .left-inputs-container1{
    width: 50%;
   cursor: pointer;
+  align-content: center;
+  border: 3px solid black;
  }
 
  .controlsHeader .biography {
    width: 50%;
    background-color: @color-yellow;
+   color: @color-black;
+   border-color: @color-black;
+   border-style: double;
  }
 
  .controlsHeader .biography p {
@@ -119,10 +130,23 @@ header{
    margin: 0;
  }
 
+ .controlsHeader .left-inputs-container1 p{
+   margin: 0;
+   display: inline;
+   font-size: 20px;
+ }
+
+.controlsHeader .left-inputs-container1 input[type=button]{
+   height: 50%;
+   border: 2px solid black;
+}
+
  input{
   display: inline-flex;
   cursor: pointer;
-  margin-left: 3%;
+  margin-left: 2%;
+  font-family: linebeam;
+  margin-top: 1%;
  }
 
  .fakeUnderHeader{
@@ -139,19 +163,19 @@ header{
  }
  
  .project{
-   height: 400px;
-   width: 300px;
+   height: 500px;
+   width: 400px;
    background: @color-white;
    position: fixed;
    left: 500px;
    cursor: move;
    display: none;
    -webkit-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
  }
 
  #myCanvas{
-   border: 2px inset;
+   border: 10px inset @color-blue;
    margin-top: 1%;
  }
