@@ -57,21 +57,39 @@ function getWidthOfPainting() {
 }
 
 function saveCanvas() {
-  var c = document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
-  var d = c.toDataURL("image/png");
-  var w = window.open('SAVE & SHARE :)', 'image from canvas');
-  w.document.write("<h1>thanks for drawing :) </h1> <img src='" + d + "' alt='from canvas'/>");
+  var canvas = document.getElementById('myCanvas');
+  ReImg.fromCanvas(canvas).downloadPng();
 }
 
+
 function clearCanvas() {
-  // Use the identity matrix while clearing the canvas
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 
 $(document).ready(function () {
   InitCanvas();
-  $(".project").draggable();
+  $(".projectVideo").draggable();
+  $('.projectVideo').css('display', "block");
 });
+
+//PLAY, PAUSE, CLOSE PROJECT
+
+function pauseVideo(id){
+  $('#' + id).get(0).pause();
+}
+
+function playVideo(id){
+  $('#' + id).get(0).play();
+}
+
+function closeProject(id, videoId){
+  $('#' + id).fadeOut(500);
+  pauseVideo(videoId);
+}
+
+function goToInstagram(){
+  window.open("mailto:webmaster@example.com") //TODO: Poner el email. 
+}

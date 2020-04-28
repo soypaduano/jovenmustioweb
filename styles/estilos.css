@@ -2,22 +2,24 @@
   font-family: linebeam;
   src: url(../fuentes/linear_beam/Linebeam.ttf);
 }
+@font-face {
+  font-family: haptik;
+  src: url(../fuentes/GT-Haptik-Black.woff2);
+}
 * {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: haptik;
+}
+input[type=button] {
+  border: 2px solid black;
+}
+input[type=button]:hover {
+  background-color: #103AFA;
 }
 body {
   margin: 0%;
-}
-#cursor {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  border-radius: 1px;
-  background-color: transparent;
-  top: -100px;
-  left: -100px;
+  background: #1b07fd;
+  background: radial-gradient(circle, #1b07fd 0%, rgba(255, 0, 0, 0.48223039) 67%);
 }
 header {
   position: fixed;
@@ -30,8 +32,8 @@ header {
   text-align: left;
   height: 50px;
   overflow: hidden;
-  background: #000000;
-  color: #FFFFFF;
+  background: #ffffff;
+  background: radial-gradient(circle, #ffffff 0%, rgba(0, 0, 0, 0.9080007) 46%);
   border: 1px solid #FFFFFF;
 }
 .header h2 {
@@ -42,7 +44,7 @@ header {
   line-height: 50px;
   text-align: center;
   letter-spacing: 3px;
-  font-size: 35px;
+  font-size: 2.7vh;
   /* Starting position */
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
@@ -85,27 +87,18 @@ header {
     transform: translateX(-100%);
   }
 }
-.content {
-  padding: 16px;
-}
 .controlsHeader {
   width: 100%;
-  background-color: #FA1010;
-  height: 70px;
+  background: #fafa10;
+  background: linear-gradient(90deg, #fafa10 0%, rgba(255, 0, 0, 0.9080007) 50%, #fafa10 74%);
   display: inline-flex;
-}
-.controlsHeader .left-inputs-container1 {
-  width: 50%;
-  cursor: pointer;
-  align-content: center;
-  border: 3px solid black;
 }
 .controlsHeader .biography {
   width: 50%;
-  background-color: #FAFA10;
   color: #000000;
   border-color: #000000;
   border-style: double;
+  text-align: center;
 }
 .controlsHeader .biography p {
   margin: 0;
@@ -113,44 +106,55 @@ header {
   border-color: #000000;
   border-style: double;
   border-width: 4px;
+  font-size: 2.1vh;
 }
-input[type=radio] {
-  width: 15px;
-  height: 15px;
+.controlsHeader .biography p:hover {
+  background: #103AFA;
+}
+.controlsHeader .left-inputs-container1 {
+  width: 50%;
   cursor: pointer;
-  background-color: #FAFA10;
-  margin: 0;
+  border: 3px solid black;
+  flex: 1;
 }
-.controlsHeader .left-inputs-container1 p {
-  margin: 0;
-  display: inline;
-  font-size: 20px;
-}
-.controlsHeader .left-inputs-container1 input[type=button] {
-  height: 50%;
-  border: 2px solid black;
-}
-input {
+.controlsHeader .left-inputs-container1 input {
   display: inline-flex;
   cursor: pointer;
-  margin-left: 2%;
-  font-family: linebeam;
+  margin-left: 5%;
+}
+.controlsHeader .left-inputs-container1 input[type=radio] {
+  width: 20px;
+  height: 20px;
+  background-color: #FAFA10;
   margin-top: 1%;
 }
+.controlsHeader .left-inputs-container1 input[type=radio].radioFunInTheGarden:hover {
+  cursor: url('../images/fun.png'), pointer;
+}
+.controlsHeader .left-inputs-container1 input[type=button] {
+  height: 30;
+}
+.controlsHeader .left-inputs-container1 #buttonContactMe:hover {
+  cursor: url('../images/email.png'), pointer;
+}
+.controlsHeader .left-inputs-container1 span {
+  margin-left: 3%;
+}
+.controlsHeader .left-inputs-container1 span:hover {
+  background-color: #103AFA;
+}
 .fakeUnderHeader {
-  background: #FFFFFF;
-  height: 130px;
+  height: 100px;
   width: 100%;
 }
 .mainContainer {
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;
   text-align: center;
 }
-.project {
-  height: 500px;
-  width: 400px;
+.projectVideo {
+  height: 450px;
+  width: 800px;
   background: #FFFFFF;
   position: fixed;
   left: 500px;
@@ -160,7 +164,131 @@ input {
   -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
 }
+.projectVideo video:hover {
+  border-radius: 5px;
+  filter: saturate(160%);
+  cursor: move;
+}
+.projectVideo .videoProjectControllers {
+  float: right;
+}
+.projectVideo .videoProjectControllers input {
+  border: 2px solid black;
+  cursor: pointer;
+}
+.projectVideo .projectTitle {
+  float: left;
+  padding: 1px;
+}
+.canvasControllers {
+  position: relative;
+  text-align: center;
+  height: 40px;
+  flex: 1;
+}
+.canvasControllers input {
+  cursor: pointer;
+}
+.canvasControllers a {
+  color: #103AFA;
+  background-color: yellow;
+}
+.canvasControllers .creator {
+  font-size: 12px;
+}
 #myCanvas {
-  border: 10px inset #103AFA;
-  margin-top: 1%;
+  border: 10px inset #000000;
+  border-top-width: 2px;
+  border-radius: 3%;
+  background: #103afa;
+  background: linear-gradient(120deg, rgba(16, 58, 250, 0.74833683) 7%, rgba(255, 255, 255, 0.47102591) 51%, #1e45fa 98%);
+}
+input[type=range] {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
 }

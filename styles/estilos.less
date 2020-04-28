@@ -9,29 +9,33 @@
   src: url(../fuentes/linear_beam/Linebeam.ttf);
 }
 
+@font-face {
+  font-family: haptik;
+  src: url(../fuentes/GT-Haptik-Black.woff2);
+}
+
 * {
-  cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=),auto;
-  font-family: 'Source Sans Pro', sans-serif;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
+  //font-family: 'Source Sans Pro', sans-serif;
   //font-family: linebeam;
+  font-family: haptik;
 }
 
-body{
-  margin:0%;
+input[type=button] {
+  border: 2px solid black;
+
+  &:hover {
+    background-color: @color-blue;
+  }
 }
 
-//FOR PAINTING ALL SCREEN
-#cursor {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  border-radius: 1px;
-  background-color: transparent;
-  top: -100px;
-  left: -100px;
+body {
+  margin: 0%;
+  background: rgb(27,7,253);
+background: radial-gradient(circle, rgba(27,7,253,1) 0%, rgba(255,0,0,0.4822303921568627) 67%);
 }
 
-header{
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -39,143 +43,314 @@ header{
 }
 
 .header {
-    color: white;
-    text-align: left;
-    height: 50px;	
-    overflow: hidden;
-    background: @color-black;
-    color: @color-white;
-    border: 1px solid @color-white;
-  }
-
-  .header h2{
-    position: absolute;
-    width: 190%;
-    height: 40%;
-    margin: 0;
-    line-height: 50px;
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 35px;
-    /* Starting position */
-    -moz-transform:translateX(100%);
-    -webkit-transform:translateX(100%);	
-    transform:translateX(100%);
-    /* Apply animation to this element */	
-    -moz-animation: scroll-left 20s linear infinite;
-    -webkit-animation: scroll-left 20s linear infinite;
-    animation: scroll-left 20s linear infinite;
-  }
-        /* Move it (define the animation) */
-        @-moz-keyframes scroll-left {
-          0%   { -moz-transform: translateX(100%); }
-          100% { -moz-transform: translateX(-100%); }
-         }
-         @-webkit-keyframes scroll-left {
-          0%   { -webkit-transform: translateX(100%); }
-          100% { -webkit-transform: translateX(-100%); }
-         }
-         @keyframes scroll-left {
-          0%   { 
-          -moz-transform: translateX(100%); /* Browser bug fix */
-          -webkit-transform: translateX(100%); /* Browser bug fix */
-          transform: translateX(100%); 		
-          }
-          100% { 
-          -moz-transform: translateX(-100%); /* Browser bug fix */
-          -webkit-transform: translateX(-100%); /* Browser bug fix */
-          transform: translateX(-100%); 
-          }
-         }
-
-  .content {
-    padding: 16px;
-  }
-
- .controlsHeader{
-   width: 100%;
-   background-color: @color-red;
-   height: 70px;
-   display: inline-flex;
- }
-
- .controlsHeader .left-inputs-container1{
-   width: 50%;
-  cursor: pointer;
-  align-content: center;
-  border: 3px solid black;
- }
-
- .controlsHeader .biography {
-   width: 50%;
-   background-color: @color-yellow;
-   color: @color-black;
-   border-color: @color-black;
-   border-style: double;
- }
-
- .controlsHeader .biography p {
-   margin: 0;
-   color: @color-black;
-   border-color: @color-black;
-   border-style: double;
-   border-width:  4px;
- }
-
- input[type=radio] {
-   width: 15px;
-   height: 15px;
-   cursor: pointer;
-   background-color: @color-yellow;
-   margin: 0;
- }
-
- .controlsHeader .left-inputs-container1 p{
-   margin: 0;
-   display: inline;
-   font-size: 20px;
- }
-
-.controlsHeader .left-inputs-container1 input[type=button]{
-   height: 50%;
-   border: 2px solid black;
+  color: white;
+  text-align: left;
+  height: 50px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0.908000700280112) 46%);
+  border: 1px solid @color-white;
 }
 
- input{
+.header h2 {
+  position: absolute;
+  width: 190%;
+  height: 40%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 2.7vh;
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: scroll-left 20s linear infinite;
+  -webkit-animation: scroll-left 20s linear infinite;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+    /* Browser bug fix */
+    -webkit-transform: translateX(100%);
+    /* Browser bug fix */
+    transform: translateX(100%);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+    /* Browser bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Browser bug fix */
+    transform: translateX(-100%);
+  }
+}
+
+
+.controlsHeader {
+  width: 100%;
+  background: rgb(250,250,16);
+background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.908000700280112) 50%, rgba(250,250,16,1) 74%);
   display: inline-flex;
+
+  .biography {
+    width: 50%;
+    color: @color-black;
+    border-color: @color-black;
+    border-style: double;
+    text-align: center;
+
+    p {
+      margin: 0;
+      color: @color-black;
+      border-color: @color-black;
+      border-style: double;
+      border-width: 4px;
+      font-size: 2.1vh;
+    }
+
+    p:hover{
+      background: @color-blue;
+    }
+  }
+
+  .left-inputs-container1 {
+    width: 50%;
+    cursor: pointer;
+    border: 3px solid black;
+    flex: 1;
+
+    input {
+      display: inline-flex;
+      cursor: pointer;
+      margin-left: 5%;
+    }
+
+    input[type=radio] {
+      width: 20px;
+      height: 20px;
+      background-color: @color-yellow;
+      margin-top: 1%;
+
+      &.radioFunInTheGarden:hover {
+        cursor: url('../images/fun.png'), pointer;
+      }
+    }
+
+    input[type=button] {
+      height: 30;
+    }
+
+    #buttonContactMe:hover {
+      cursor: url('../images/email.png'), pointer;
+    }
+
+    span {
+      margin-left: 3%;
+
+      &:hover {
+        background-color: @color-blue;
+      }
+    }
+  }
+}
+
+.fakeUnderHeader {
+  height: 100px;
+  width: 100%;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.projectVideo {
+  height: 450px;
+  width: 800px;
+  background: @color-white;
+  position: fixed;
+  left: 500px;
+  cursor: move;
+  display: none;
+  -webkit-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+}
+
+.projectVideo video:hover {
+  border-radius: 5px;
+  filter: saturate(160%);
+  cursor: move;
+}
+
+.projectVideo {
+  .videoProjectControllers {
+    float: right;
+
+    input {
+      border: 2px solid black;
+      cursor: pointer;
+    }
+  }
+}
+
+.projectVideo {
+  .projectTitle {
+    float: left;
+    padding: 1px;
+  }
+}
+
+.canvasControllers {
+  position: relative;
+  text-align: center;
+  height: 40px;
+  flex: 1;
+
+  input {
+    cursor: pointer;
+  }
+
+  a {
+    color: @color-blue;
+    background-color: yellow;
+  }
+
+  .creator {
+    font-size: 12px;
+  }
+}
+
+#myCanvas {
+  border: 10px inset @color-black;
+  border-top-width: 2px;
+  border-radius: 3%;
+  background: rgb(16, 58, 250);
+  background: linear-gradient(120deg, rgba(16, 58, 250, 0.7483368347338936) 7%, rgba(255, 255, 255, 0.47102591036414565) 51%, rgba(30, 69, 250, 1) 98%);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
   cursor: pointer;
-  margin-left: 2%;
-  font-family: linebeam;
-  margin-top: 1%;
- }
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
 
- .fakeUnderHeader{
-   background: @color-white;
-   height: 130px;
-   width: 100%;
- }
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
 
- .mainContainer{
-   width: 100%;
-   height: 100%;
-   background-color: @color-white;
-   text-align: center;
- }
- 
- .project{
-   height: 500px;
-   width: 400px;
-   background: @color-white;
-   position: fixed;
-   left: 500px;
-   cursor: move;
-   display: none;
-   -webkit-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 20px 17px rgba(0,0,0,0.75);
- }
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 12px;
+  width: 120px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 2px 2px 2px #000000, 1px 3px 3px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
 
- #myCanvas{
-   border: 10px inset @color-blue;
-   margin-top: 1%;
- }
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
