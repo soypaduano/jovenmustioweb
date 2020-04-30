@@ -147,7 +147,7 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
     input {
       display: inline-flex;
       cursor: pointer;
-      margin-left: 5%;
+      margin-left: 3%;
     }
 
     input[type=radio] {
@@ -191,8 +191,8 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
 }
 
 .projectVideo {
-  height: 450px;
-  width: 800px;
+  height: 405px;
+  width: 780px;
   background: @color-white;
   position: fixed;
   left: 500px;
@@ -203,13 +203,13 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
 }
 
-.projectVideo video:hover {
-  border-radius: 5px;
-  filter: saturate(160%);
-  cursor: move;
-}
 
 .projectVideo {
+  z-index: 1;
+  .projectTitle {
+    float: left;
+    padding: 1px;
+  }
   .videoProjectControllers {
     float: right;
 
@@ -218,12 +218,10 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
       cursor: pointer;
     }
   }
-}
-
-.projectVideo {
-  .projectTitle {
-    float: left;
-    padding: 1px;
+  &:hover{
+    border-radius: 5px;
+    filter: saturate(160%);
+    cursor: move;
   }
 }
 
@@ -232,16 +230,13 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
   text-align: center;
   height: 40px;
   flex: 1;
-
   input {
     cursor: pointer;
   }
-
   a {
     color: @color-blue;
     background-color: yellow;
   }
-
   .creator {
     font-size: 12px;
   }
@@ -353,4 +348,16 @@ input[type=range]::-ms-fill-upper {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
+}
+
+svg{
+  width: 100%;
+  height: 300px;
+}
+
+path{
+  stroke: #2727e6;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: none;
 }

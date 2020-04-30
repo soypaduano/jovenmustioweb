@@ -1,3 +1,4 @@
+
 var mousePressed = false;
 var lastX, lastY;
 var ctx;
@@ -68,11 +69,15 @@ function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
+let xs = [];
+let t = 0
 $(document).ready(function () {
   InitCanvas();
   $(".projectVideo").draggable();
   $('.projectVideo').css('display', "block");
+
+  createExes();
+  animate();
 });
 
 //PLAY, PAUSE, CLOSE PROJECT
@@ -91,5 +96,32 @@ function closeProject(id, videoId){
 }
 
 function goToInstagram(){
-  window.open("mailto:webmaster@example.com") //TODO: Poner el email. 
+  window.open("mailto:webmaster@example.com")
+}
+
+
+
+function createExes(){
+  for(var i = 0; i < 500; i++){
+    xs.push(i);
+  }
+}
+
+function animate(){
+  let points = xs.map(x => {
+    
+    let y = 200 + 20 * Math.sin((x + t) / 50)
+    
+    return [x, y]
+  })
+  
+  let path = "M" + points.map(p => {
+    return p[0] + "," + p[1]
+  }).join(" L")
+  
+  document.querySelector("path").setAttribute("d", path)
+  
+  t += 0.5
+
+  requestAnimationFrame(animate);
 }
