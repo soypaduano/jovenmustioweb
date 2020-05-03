@@ -76,19 +76,24 @@ $(document).ready(function () {
   $(".projectVideo").draggable();
   $('.projectVideo').css('display', "block");
 
+  //resize canvas
+  resizeCanvas();
+  //Create svg elements
   createExes();
   animate();
 });
 
-//PLAY, PAUSE, CLOSE PROJECT
 
-function pauseVideo(id){
-  $('#' + id).get(0).pause();
+function resizeCanvas(){
+  var canvas = document.getElementById("myCanvas");
+
+  canvas.width = percentage(90, $(window).width());
+  canvas.height = percentage(60, $(window).height())
 }
 
-function playVideo(id){
-  $('#' + id).get(0).play();
-}
+function percentage(percent, total) {
+  return ((percent/ 100) * total).toFixed(2)
+} 
 
 function closeProject(id, videoId){
   $('#' + id).fadeOut(500);
@@ -100,28 +105,22 @@ function goToInstagram(){
 }
 
 
-
+//SVG ANIMATION
 function createExes(){
-  for(var i = 0; i < 500; i++){
+  for(var i = 0; i < 3000; i++){
     xs.push(i);
   }
 }
 
 function animate(){
   let points = xs.map(x => {
-    
-    let y = 200 + 20 * Math.sin((x + t) / 50)
-    
+    let y = 40 + 20 * Math.sin((x + t) / 30)
     return [x, y]
   })
-  
   let path = "M" + points.map(p => {
     return p[0] + "," + p[1]
   }).join(" L")
-  
   document.querySelector("path").setAttribute("d", path)
-  
-  t += 0.5
-
+  t += 0.7
   requestAnimationFrame(animate);
 }

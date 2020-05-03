@@ -3,12 +3,16 @@
   src: url(../fuentes/linear_beam/Linebeam.ttf);
 }
 @font-face {
+  font-family: grotesk;
+  src: url(../fuentes/SpaceGrotesk-SemiBold.ttf);
+}
+@font-face {
   font-family: haptik;
   src: url(../fuentes/GT-Haptik-Black.woff2);
 }
 * {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
-  font-family: haptik;
+  font-family: grotesk;
 }
 input[type=button] {
   border: 2px solid black;
@@ -100,21 +104,21 @@ header {
   border-style: double;
   text-align: center;
 }
-.controlsHeader .biography p {
+.controlsHeader .biography .textBiography {
+  appearance: none;
   margin: 0;
+  width: 100%;
   color: #000000;
-  border-color: #000000;
-  border-style: double;
-  border-width: 4px;
-  font-size: 2.1vh;
+  font-size: 130%;
+  margin-top: 1%;
 }
-.controlsHeader .biography p:hover {
+.controlsHeader .biography .textBiography:hover {
   background: #103AFA;
 }
 .controlsHeader .left-inputs-container1 {
   width: 50%;
   cursor: pointer;
-  border: 3px solid black;
+  border: 3px double black;
   flex: 1;
 }
 .controlsHeader .left-inputs-container1 input {
@@ -144,22 +148,25 @@ header {
   background-color: #103AFA;
 }
 .fakeUnderHeader {
-  height: 100px;
+  height: 120px;
+  position: relative;
   width: 100%;
+  z-index: -1;
 }
 .mainContainer {
   width: 100%;
   height: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 .projectVideo {
   height: 405px;
-  width: 780px;
+  width: 600px;
   background: #FFFFFF;
   position: fixed;
   left: 500px;
   cursor: move;
-  display: none;
+  display: grid;
   -webkit-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
@@ -297,11 +304,10 @@ input[type=range]:focus::-ms-fill-upper {
 }
 svg {
   width: 100%;
-  height: 300px;
+  height: 100px;
 }
 path {
   stroke: #2727e6;
   stroke-width: 10px;
   stroke-linecap: round;
-  fill: none;
 }

@@ -9,6 +9,11 @@
   src: url(../fuentes/linear_beam/Linebeam.ttf);
 }
 
+@font-face{
+  font-family: grotesk;
+  src: url(../fuentes/SpaceGrotesk-SemiBold.ttf);
+}
+
 @font-face {
   font-family: haptik;
   src: url(../fuentes/GT-Haptik-Black.woff2);
@@ -18,7 +23,7 @@
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
   //font-family: 'Source Sans Pro', sans-serif;
   //font-family: linebeam;
-  font-family: haptik;
+  font-family: grotesk;
 }
 
 input[type=button] {
@@ -124,16 +129,16 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
     border-style: double;
     text-align: center;
 
-    p {
+    .textBiography {
+      appearance: none;
       margin: 0;
+      width: 100%;
       color: @color-black;
-      border-color: @color-black;
-      border-style: double;
-      border-width: 4px;
-      font-size: 2.1vh;
+      font-size: 130%;
+      margin-top: 1%;
     }
 
-    p:hover{
+    .textBiography:hover{
       background: @color-blue;
     }
   }
@@ -141,7 +146,7 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
   .left-inputs-container1 {
     width: 50%;
     cursor: pointer;
-    border: 3px solid black;
+    border: 3px double black;
     flex: 1;
 
     input {
@@ -180,24 +185,27 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
 }
 
 .fakeUnderHeader {
-  height: 100px;
+  height: 120px;
+  position: relative;
   width: 100%;
+  z-index: -1;
 }
 
 .mainContainer {
   width: 100%;
   height: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 
 .projectVideo {
   height: 405px;
-  width: 780px;
+  width: 600px;
   background: @color-white;
   position: fixed;
   left: 500px;
   cursor: move;
-  display: none;
+  display: grid;
   -webkit-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
@@ -352,12 +360,11 @@ input[type=range]:focus::-ms-fill-upper {
 
 svg{
   width: 100%;
-  height: 300px;
+  height: 100px;
 }
 
 path{
   stroke: #2727e6;
   stroke-width: 10px;
   stroke-linecap: round;
-  fill: none;
 }
