@@ -11,7 +11,7 @@
   src: url(../fuentes/GT-Haptik-Black.woff2);
 }
 * {
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
+  cursor: url(data:image/utils/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
   font-family: grotesk;
 }
 input[type=button] {
@@ -139,7 +139,7 @@ header {
   height: 30;
 }
 .controlsHeader .left-inputs-container1 #buttonContactMe:hover {
-  cursor: url('../images/email.png'), pointer;
+  cursor: url('../images/utils/email.png'), pointer;
 }
 .controlsHeader .left-inputs-container1 span {
   margin-left: 3%;
@@ -159,36 +159,66 @@ header {
   text-align: center;
   margin: 0 auto;
 }
-.projectVideo {
+.projectVideo,
+.projectFoto {
   height: 405px;
   width: 600px;
   background: #FFFFFF;
   position: fixed;
-  left: 500px;
   cursor: move;
   display: grid;
   -webkit-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
-}
-.projectVideo {
   z-index: 1;
 }
-.projectVideo .projectTitle {
+.projectVideo .projectTitle,
+.projectFoto .projectTitle {
   float: left;
   padding: 1px;
 }
-.projectVideo .videoProjectControllers {
+.projectVideo .projectControllers,
+.projectFoto .projectControllers {
   float: right;
 }
-.projectVideo .videoProjectControllers input {
+.projectVideo .projectControllers input,
+.projectFoto .projectControllers input {
   border: 2px solid black;
   cursor: pointer;
 }
-.projectVideo:hover {
+.projectVideo:hover,
+.projectFoto:hover {
   border-radius: 5px;
   filter: saturate(160%);
   cursor: move;
+}
+.projectVideo {
+  z-index: 6;
+}
+.projectFoto {
+  height: 250px;
+  width: 400px;
+  color: #FFFFFF;
+}
+#tunelFoto2 {
+  background-image: url('../images/tunel/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tunelFoto3 {
+  background-image: url('../images/tunel/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tunelFoto4 {
+  background-image: url('../images/tunel/4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tunelFoto1 {
+  background-image: url('../images/tunel/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .canvasControllers {
   position: relative;
@@ -310,4 +340,5 @@ path {
   stroke: #2727e6;
   stroke-width: 10px;
   stroke-linecap: round;
+  fill: none;
 }

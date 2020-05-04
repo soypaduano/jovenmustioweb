@@ -53,8 +53,6 @@
             <input type="radio" id="projectRadio5" name="project" value="projectRadio">
             <input type="radio" id="projectRadio6" name="project" value="projectRadio">
             <input type="radio" id="projectRadio" name="project" value="projectRadio">
-
-
         </div>
     </div>
 </header>
@@ -65,27 +63,48 @@
     </section>
     <section class="mainContainer">
         <div id="paint-app">
-            <div id="projectFunGarden" class="projectVideo ui-widget-content" style="display: flex">
+            <!-- Project fun garden -->
+            <div id="projectFunGarden" class="projectVideo ui-widget-content" style="display: none">
                 <span class="projectTitle">Fun in the garden (2019)</span>
-                <div class="videoProjectControllers">
-                    <input type="button" value="close" onclick="closeProject('projectFunGarden', 'funGarden')">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('projectFunGarden')">
                 </div>
-                <iframe src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="600"
+                <iframe src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="585"
                     height="325" frameborder="0" scrolling="no" seamless=""></iframe>
             </div>
 
+            <!-- Project tunel video -->
             <div id="projectTunelVideo" class="projectVideo ui-widget-content" style="display: flex">
                 <span class="projectTitle">Tunel (2019)</span>
-                <div class="videoProjectControllers">
-                    <input type="button" value="close" onclick="closeProject('projectTunelVideo', 'tunel')">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('projectTunelVideo')">
                 </div>
-                    <iframe src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="600"
-                        height="325" frameborder="0" scrolling="no" seamless=""></iframe>
+                <iframe src="https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview" width="585" height="325"></iframe>
             </div>
 
+            <div id="tunelFoto1" class="projectFoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('tunelFoto1')">
+                </div>
+            </div>
 
-            <div id="project1" class="project ui-widget-content"></div>
-            <div id="project1" class="project ui-widget-content"></div>
+            <div id="tunelFoto2" class="projectFoto ui-widget-content">
+                    <div class="projectControllers">
+                        <input type="button" value="close" onclick="closeProject('tunelFoto2')">
+                    </div>
+            </div>
+
+            <div id="tunelFoto3" class="projectFoto ui-widget-content">
+                    <div class="projectControllers">
+                        <input type="button" value="close" onclick="closeProject('tunelFoto3')">
+                    </div>
+            </div>
+
+            <div id="tunelFoto4" class="projectFoto ui-widget-content">
+                    <div class="projectControllers">
+                        <input type="button" value="close" onclick="closeProject('tunelFoto4')">
+                    </div>
+            </div>
 
             <div id="project1" class="project ui-widget-content"></div>
             <canvas id="myCanvas"></canvas>

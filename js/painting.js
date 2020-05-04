@@ -73,9 +73,15 @@ let xs = [];
 let t = 0
 $(document).ready(function () {
   InitCanvas();
+  //Le damos comportamiento a los e
   $(".projectVideo").draggable();
   $('.projectVideo').css('display', "block");
-
+  $(".projectFoto").draggable();
+  $('.projectFoto ').css('display', "block");
+  //Ocultamos todos:
+  $('.projectVideo').hide();
+  $('.projectFoto').hide();
+  showProjectTunel();
   //resize canvas
   resizeCanvas();
   //Create svg elements
@@ -83,10 +89,29 @@ $(document).ready(function () {
   animate();
 });
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function showProjectTunel(){
+    let elementsTunel = [];
+    elementsTunel.push($('#projectTunelVideo').fadeIn(1000));
+    elementsTunel.push($('#tunelFoto1').fadeIn(1000));
+    elementsTunel.push($('#tunelFoto2').fadeIn(1000));
+    elementsTunel.push($('#tunelFoto3').fadeIn(1000));
+    elementsTunel.push($('#tunelFoto4').fadeIn(1000));
+    elementsTunel.forEach(element => {
+     
+      var left = getRandomInt(1, $(window).width() - 300)
+      $(element[0]).css('left', left + 'px');
+    });
+}
+
 
 function resizeCanvas(){
   var canvas = document.getElementById("myCanvas");
-
   canvas.width = percentage(90, $(window).width());
   canvas.height = percentage(60, $(window).height())
 }
@@ -95,9 +120,8 @@ function percentage(percent, total) {
   return ((percent/ 100) * total).toFixed(2)
 } 
 
-function closeProject(id, videoId){
+function closeProject(id){
   $('#' + id).fadeOut(500);
-  pauseVideo(videoId);
 }
 
 function goToInstagram(){
