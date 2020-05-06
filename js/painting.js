@@ -1,4 +1,3 @@
-
 var mousePressed = false;
 var lastX, lastY;
 var ctx;
@@ -81,7 +80,7 @@ $(document).ready(function () {
   //Ocultamos todos:
   $('.projectVideo').hide();
   $('.projectFoto').hide();
-  showProjectTunel();
+  showProjectTunel(); //Mostramos el primero
   //resize canvas
   resizeCanvas();
   //Create svg elements
@@ -95,48 +94,77 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function showProjectTunel(){
-    let elementsTunel = [];
-    elementsTunel.push($('#projectTunelVideo').fadeIn(1000));
-    elementsTunel.push($('#tunelFoto1').fadeIn(1000));
-    elementsTunel.push($('#tunelFoto2').fadeIn(1000));
-    elementsTunel.push($('#tunelFoto3').fadeIn(1000));
-    elementsTunel.push($('#tunelFoto4').fadeIn(1000));
-    elementsTunel.forEach(element => {
-     
-      var left = getRandomInt(1, $(window).width() - 300)
-      $(element[0]).css('left', left + 'px');
-    });
+function hideAllProjects() {
+  $('.projectVideo').fadeOut(500);
+  $('.projectFoto').fadeOut(500);
+}
+
+function showProjectTunel() {
+  hideAllProjects();
+  let elementsTunel = [];
+  elementsTunel.push($('#projectTunelVideo').fadeIn(1000));
+  elementsTunel.push($('#tunelFoto1').fadeIn(1000));
+  elementsTunel.push($('#tunelFoto2').fadeIn(1000));
+  elementsTunel.push($('#tunelFoto3').fadeIn(1000));
+  elementsTunel.push($('#tunelFoto4').fadeIn(1000));
+  elementsTunel.forEach(element => {
+    applyRandomLeft(element);
+  });
+}
+
+function showProjectGarden() {
+  hideAllProjects();
+  var element =  $('#projectFunGarden')
+  $(element).fadeIn(1000);
+  applyRandomLeft(element);
+}
+
+function showGifs(){
+  hideAllProjects();
+  var element1 = $('#gif1');
+  var element2 = $('#gif2');
+  $(element1).fadeIn(1000);
+  $(element2).fadeIn(1000);
+  applyRandomLeft(element1);
+  applyRandomLeft(element2);
+}
+
+function applyRandomLeft(element){
+  var left = getRandomInt(1, $(window).width() - 300);
+  $(element[0]).css('left', left + 'px');
 }
 
 
-function resizeCanvas(){
+
+
+function resizeCanvas() {
   var canvas = document.getElementById("myCanvas");
   canvas.width = percentage(90, $(window).width());
   canvas.height = percentage(60, $(window).height())
 }
 
 function percentage(percent, total) {
-  return ((percent/ 100) * total).toFixed(2)
-} 
-
-function closeProject(id){
-  $('#' + id).fadeOut(500);
+  return ((percent / 100) * total).toFixed(2)
 }
 
-function goToInstagram(){
-  window.open("mailto:webmaster@example.com")
+function closeProject(id, iframeId) {
+  $('#' + id).fadeOut(500);
+  if (iframeId) $('iframe').attr('src', $('iframe').attr('src'));
+}
+
+function goToInstagram() {
+  window.open("mailto:meteomartinm@gmail.com")
 }
 
 
 //SVG ANIMATION
-function createExes(){
-  for(var i = 0; i < 3000; i++){
+function createExes() {
+  for (var i = 0; i < 3000; i++) {
     xs.push(i);
   }
 }
 
-function animate(){
+function animate() {
   let points = xs.map(x => {
     let y = 40 + 20 * Math.sin((x + t) / 30)
     return [x, y]

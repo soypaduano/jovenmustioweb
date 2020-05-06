@@ -35,7 +35,7 @@
 
 <header>
     <div class="header" id="myHeader">
-        <h2>JOVEN MUSTIO YOUNG ARTIST || YOUNG MUSTIO JOVEN ARTISTA </h2>
+        <h2>JOVEN MUSTIO YOUNG ARTIST BASED IN GLASGOW BORN IN MADRID || YOUNG MUSTIO JOVEN ARTISTA EN GLASGOW NACIDO EN MADRID </h2>
     </div>
     <div class="controlsHeader">
         <div class="biography">
@@ -67,9 +67,9 @@
             <div id="projectFunGarden" class="projectVideo ui-widget-content" style="display: none">
                 <span class="projectTitle">Fun in the garden (2019)</span>
                 <div class="projectControllers">
-                    <input type="button" value="close" onclick="closeProject('projectFunGarden')">
+                    <input type="button" value="close" onclick="closeProject('projectFunGarden', 'iframeGarden')">
                 </div>
-                <iframe src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="585"
+                <iframe id="iframeGarden" src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="585"
                     height="325" frameborder="0" scrolling="no" seamless=""></iframe>
             </div>
 
@@ -77,9 +77,9 @@
             <div id="projectTunelVideo" class="projectVideo ui-widget-content" style="display: flex">
                 <span class="projectTitle">Tunel (2019)</span>
                 <div class="projectControllers">
-                    <input type="button" value="close" onclick="closeProject('projectTunelVideo')">
+                    <input type="button" value="close" onclick="closeProject('projectTunelVideo', 'iframeTunel')">
                 </div>
-                <iframe src="https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview" width="585" height="325"></iframe>
+                <iframe id="iframeTunel" src="https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview" width="585" height="325"></iframe>
             </div>
 
             <div id="tunelFoto1" class="projectFoto ui-widget-content">
@@ -106,7 +106,18 @@
                     </div>
             </div>
 
-            <div id="project1" class="project ui-widget-content"></div>
+            <div id="gif1" class="projectFoto gif ui-widget-content">
+                    <div class="projectControllers">
+                        <input type="button" value="close" onclick="closeProject('gif1')">
+                    </div>
+            </div>
+
+            <div id="gif2" class="projectFoto gif ui-widget-content">
+                    <div class="projectControllers">
+                        <input type="button" value="close" onclick="closeProject('gif2')">
+                    </div>
+            </div>
+
             <canvas id="myCanvas"></canvas>
         </div>
     </section>

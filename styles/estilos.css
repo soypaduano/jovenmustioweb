@@ -192,6 +192,12 @@ header {
   filter: saturate(160%);
   cursor: move;
 }
+.projectVideo.gif,
+.projectFoto.gif {
+  opacity: 0.9;
+  width: 400px;
+  height: 400px;
+}
 .projectVideo {
   z-index: 6;
 }
@@ -217,6 +223,16 @@ header {
 }
 #tunelFoto1 {
   background-image: url('../images/tunel/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#gif1 {
+  background-image: url('../images/gifs/gif1.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#gif2 {
+  background-image: url('../images/gifs/gif2.gif');
   background-size: cover;
   background-repeat: no-repeat;
 }
