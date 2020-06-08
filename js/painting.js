@@ -80,13 +80,28 @@ $(document).ready(function () {
   //Ocultamos todos:
   $('.projectVideo').hide();
   $('.projectFoto').hide();
-  showProjectTunel(); //Mostramos el primero
+  addListenerToRadio();
+  showProjectGarden();//Mostramos el primero
   //resize canvas
   resizeCanvas();
   //Create svg elements
   createExes();
   animate();
 });
+
+function addListenerToRadio(){
+  for(let i = 1; i < 7; i++ ){
+    $('#projectRadio' + i).click(function(){
+      if($(this).attr("func") == "funInTheGarden"){
+        showProjectGarden();
+      } else if($(this).attr("func") == "Tunel"){
+        showProjectTunel();
+      }else if($(this).attr("func") == "Gifs"){
+        showGifs();
+      }
+  });
+  }
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -101,6 +116,7 @@ function hideAllProjects() {
 
 function showProjectTunel() {
   hideAllProjects();
+  $('#title-radio-project').text("Tunel ➡️")
   let elementsTunel = [];
   elementsTunel.push($('#projectTunelVideo').fadeIn(1000));
   elementsTunel.push($('#tunelFoto1').fadeIn(1000));
@@ -113,6 +129,7 @@ function showProjectTunel() {
 }
 
 function showProjectGarden() {
+  $('#title-radio-project').text("Fun in the garden ➡️")
   hideAllProjects();
   var element =  $('#projectFunGarden')
   $(element).fadeIn(1000);
@@ -120,6 +137,7 @@ function showProjectGarden() {
 }
 
 function showGifs(){
+  $('#title-radio-project').text("Misc Gifs ➡️")
   hideAllProjects();
   var element1 = $('#gif1');
   var element2 = $('#gif2');
@@ -133,9 +151,6 @@ function applyRandomLeft(element){
   var left = getRandomInt(1, $(window).width() - 300);
   $(element[0]).css('left', left + 'px');
 }
-
-
-
 
 function resizeCanvas() {
   var canvas = document.getElementById("myCanvas");
