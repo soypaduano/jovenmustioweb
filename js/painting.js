@@ -81,6 +81,7 @@ $(document).ready(function () {
   $('.projectVideo').hide();
   $('.projectFoto').hide();
   addListenerToRadio();
+  addHoverListenerToRadio();
   showProjectGarden();//Mostramos el primero
   //resize canvas
   resizeCanvas();
@@ -88,6 +89,18 @@ $(document).ready(function () {
   createExes();
   animate();
 });
+
+function addHoverListenerToRadio(){
+  for(let i = 1; i < 7; i++){
+    $("#projectRadio" + i).hover(function(){
+      $('.tooltipRadio').show();
+      let name = $('#projectRadio' + i).attr('name');
+      $('.tooltipRadio').text(name);
+    }, function(){
+      $('.tooltipRadio').hide();
+    });
+  }
+}
 
 function addListenerToRadio(){
   for(let i = 1; i < 7; i++ ){
@@ -119,6 +132,7 @@ function showProjectTunel() {
   $('#title-radio-project').text("Tunel ➡️")
   let elementsTunel = [];
   elementsTunel.push($('#projectTunelVideo').fadeIn(1000));
+  $('#iframeTunel').attr('src', 'https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview');
   elementsTunel.push($('#tunelFoto1').fadeIn(1000));
   elementsTunel.push($('#tunelFoto2').fadeIn(1000));
   elementsTunel.push($('#tunelFoto3').fadeIn(1000));
