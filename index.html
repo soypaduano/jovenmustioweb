@@ -6,8 +6,10 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="styles/estilos.css">
     <script src="js/reimg.js"></script>
-    <script src="js/painting.js"></script>
+    <script src="js/controller.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/gif" >
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
 
 <!-- Movimiento de imagen -->
@@ -35,7 +37,8 @@
 
 <header>
     <div class="header" id="myHeader">
-        <h2>JOVEN MUSTIO YOUNG ARTIST BASED IN GLASGOW BORN IN MADRID || YOUNG MUSTIO JOVEN ARTISTA EN GLASGOW NACIDO EN MADRID </h2>
+        <h2>JOVEN MUSTIO YOUNG ARTIST BASED IN GLASGOW BORN IN MADRID || YOUNG MUSTIO JOVEN ARTISTA EN GLASGOW NACIDO EN
+            MADRID </h2>
     </div>
     <div class="controlsHeader">
         <div class="biography">
@@ -46,12 +49,13 @@
             <input type="button" value="contact me" id="buttonContactMe" onclick="goToInstagram()">
             <span id="title-radio-project"> ver proyectos </span>
             <div class="tooltipRadio projectRadio1">fun in the garden</div>
-            <input type="radio" id=projectRadio1 class="radioFunInTheGarden" name="project"  func="funInTheGarden" checked="checked" nameTooltip="fun in the garden">
-            <input type="radio" id="projectRadio2" func="Tunel" name="project" value="projectRadio" nameTooltip="tunel">
-            <input type="radio" id="projectRadio3" func="Gifs" name="project" value="projectRadio" nameTooltip="gifs">
-            <input type="radio" id="projectRadio4" name="project" value="projectRadio">
-            <input type="radio" id="projectRadio5" name="project" value="projectRadio">
-            <input type="radio" id="projectRadio6" name="project" value="projectRadio">
+            <input type="radio" id=projectRadio1 class="radioFunInTheGarden" name="project" func="showProjectGarden" checked="checked" nameTooltip="fun in the garden">
+            <input type="radio" id="projectRadio2" func="showProjectTunel" name="project" value="projectRadio" nameTooltip="tunel project">
+            <input type="radio" id="projectRadio3" func="showGifs" name="project" value="projectRadio" nameTooltip="gifs">
+            <input type="radio" id="projectRadio4" name="project" value="projectRadio" func="showIlustrations" nameTooltip="ilustrations">
+            <input type="radio" id="projectRadio5" name="project" value="projectRadio" func="showAbandonedGrafitti"nameTooltip="abandoned grafitti">
+            <input type="radio" id="projectRadio6" name="project" value="projectRadio" func="showDownHere"nameTooltip="down Here">
+            <input type="radio" id="projectRadio7" name="project" value="projectRadio" func="showLinephoto" nameTooltip="line photos">
         </div>
     </div>
 </header>
@@ -62,13 +66,15 @@
     </section>
     <section class="mainContainer">
         <div id="paint-app">
+
             <!-- Project fun garden -->
             <div id="projectFunGarden" class="projectVideo ui-widget-content" style="display: none">
                 <span class="projectTitle">Fun in the garden (2019)</span>
                 <div class="projectControllers">
                     <input type="button" value="close" onclick="closeProject('projectFunGarden', 'iframeGarden')">
                 </div>
-                <iframe id="iframeGarden" src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="585"
+                <iframe id="iframeGarden"
+                    src="https://drive.google.com/file/d/1_Wx2GBKB-xbaAMiW9jzQCKtAeYX0b0Nq/preview" width="585"
                     height="325" frameborder="0" scrolling="no" seamless=""></iframe>
             </div>
 
@@ -78,7 +84,8 @@
                 <div class="projectControllers">
                     <input type="button" value="close" onclick="closeProject('projectTunelVideo', 'iframeTunel')">
                 </div>
-                <iframe id="iframeTunel" src="https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview" width="585" height="325"></iframe>
+                <iframe id="iframeTunel" src="https://drive.google.com/file/d/198Boh4Ekhn79jT54eDYQP7IciP09GbUj/preview"
+                    width="585" height="325"></iframe>
             </div>
 
             <div id="tunelFoto1" class="projectFoto ui-widget-content">
@@ -88,33 +95,183 @@
             </div>
 
             <div id="tunelFoto2" class="projectFoto ui-widget-content">
-                    <div class="projectControllers">
-                        <input type="button" value="close" onclick="closeProject('tunelFoto2')">
-                    </div>
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('tunelFoto2')">
+                </div>
             </div>
 
             <div id="tunelFoto3" class="projectFoto ui-widget-content">
-                    <div class="projectControllers">
-                        <input type="button" value="close" onclick="closeProject('tunelFoto3')">
-                    </div>
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('tunelFoto3')">
+                </div>
             </div>
 
             <div id="tunelFoto4" class="projectFoto ui-widget-content">
-                    <div class="projectControllers">
-                        <input type="button" value="close" onclick="closeProject('tunelFoto4')">
-                    </div>
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('tunelFoto4')">
+                </div>
             </div>
 
+            <!-- Proyecto Gifs -->
             <div id="gif1" class="projectFoto gif ui-widget-content">
-                    <div class="projectControllers">
-                        <input type="button" value="close" onclick="closeProject('gif1')">
-                    </div>
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('gif1')">
+                </div>
             </div>
 
             <div id="gif2" class="projectFoto gif ui-widget-content">
-                    <div class="projectControllers">
-                        <input type="button" value="close" onclick="closeProject('gif2')">
-                    </div>
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('gif2')">
+                </div>
+            </div>
+
+            <!-- Proyecto Ilustraciones -->
+            <div id="ilustracion1" class="projectFoto ilustration  ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('ilustracion1')">
+                </div>
+            </div>
+
+            <div id="ilustracion2" class="projectFoto ilustration ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('ilustracion2')">
+                </div>
+            </div>
+
+            <div id="ilustracion3" class="projectFoto ilustration ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('ilustracion3')">
+                </div>
+            </div>
+
+            <!-- Proyecto Grafitti abandonado -->
+            <div id="grafittiAbandoned1" class="projectFoto grafittiVertical ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('grafittiAbandoned1')">
+                </div>
+            </div>
+
+            <div id="grafittiAbandoned2" class="projectFoto grafittiHorizontal ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('grafittiAbandoned2')">
+                </div>
+            </div>
+
+            <div id="grafittiAbandoned3" class="projectFoto grafittiHorizontal ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('grafittiAbandoned3')">
+                </div>
+            </div>
+
+
+            <!-- Proyecto Down Here  -->
+            <div id="downhere1" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere1')">
+                </div>
+            </div>
+
+            <div id="downhere2" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere2')">
+                </div>
+            </div>
+
+            <div id="downhere3" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere3')">
+                </div>
+            </div>
+            <div id="downhere4" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere4')">
+                </div>
+            </div>
+
+            <div id="downhere5" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere5')">
+                </div>
+            </div>
+
+            <div id="downhere6" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere6')">
+                </div>
+            </div>
+
+            <div id="downhere7" class="projectFoto downhere ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('downhere7')">
+                </div>
+            </div>
+
+
+
+            <!-- Proyecto Line Photos  -->
+            <div id="linephoto1" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto1')">
+                </div>
+            </div>
+
+            <div id="linephoto2" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto2')">
+                </div>
+            </div>
+
+            <div id="linephoto3" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto3')">
+                </div>
+            </div>
+            <div id="linephoto4" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto4')">
+                </div>
+            </div>
+
+            <div id="linephoto5" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto5')">
+                </div>
+            </div>
+
+            <div id="linephoto6" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto6')">
+                </div>
+            </div>
+
+            <div id="linephoto7" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto7')">
+                </div>
+            </div>
+
+            <div id="linephoto8" class=" projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto8')">
+                </div>
+            </div>
+
+            <div id="linephoto9" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto9')">
+                </div>
+            </div>
+
+            <div id="linephoto10" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto10')">
+                </div>
+            </div>
+
+            <div id="linephoto11" class="projectFoto linephoto ui-widget-content">
+                <div class="projectControllers">
+                    <input type="button" value="close" onclick="closeProject('linephoto11')">
+                </div>
             </div>
 
             <canvas id="myCanvas"></canvas>
@@ -129,14 +286,11 @@
         </div>
         <span class="creator"> developed by <a href="https://github.com/soypaduano"> sebaspaduano (2o2o) </a> </span>
         <div class="curveFooter">
-                <svg>
-                    <path id="curvePath" d="M10,10 L50, 100 L90, 100"></path>
-                </svg>
-            </div>
+            <svg>
+                <path id="curvePath" d="M10,10 L50, 100 L90, 100"></path>
+            </svg>
+        </div>
     </section>
-
-
-
 
 </body>
 

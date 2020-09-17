@@ -188,8 +188,8 @@ header {
 }
 .projectVideo:hover,
 .projectFoto:hover {
-  border-radius: 5px;
-  filter: saturate(160%);
+  border-radius: 10px;
+  filter: saturate(260%);
   cursor: move;
 }
 .projectVideo.gif,
@@ -197,6 +197,32 @@ header {
   opacity: 0.9;
   width: 400px;
   height: 400px;
+}
+.projectVideo.ilustration,
+.projectFoto.ilustration {
+  opacity: 0.9;
+  width: 340px;
+  height: 498px;
+}
+.projectVideo.grafittiVertical,
+.projectFoto.grafittiVertical {
+  width: 500px;
+  height: 700px;
+}
+.projectVideo.grafittiHorizontal,
+.projectFoto.grafittiHorizontal {
+  width: 900px;
+  height: 450px;
+}
+.projectVideo.downhere,
+.projectFoto.downhere {
+  width: 600px;
+  height: 300px;
+}
+.projectVideo.linephoto,
+.projectFoto.linephoto {
+  width: 300px;
+  height: 150px;
 }
 .projectVideo {
   z-index: 6;
@@ -233,6 +259,121 @@ header {
 }
 #gif2 {
   background-image: url('../images/gifs/gif2.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#ilustracion1 {
+  background-image: url('../images/ilustraciones/1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#ilustracion2 {
+  background-image: url('../images/ilustraciones/2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#ilustracion3 {
+  background-image: url('../images/ilustraciones/3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#grafittiAbandoned1 {
+  background-image: url('../images/abandonedGrafitti/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#grafittiAbandoned2 {
+  background-image: url('../images/abandonedGrafitti/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#grafittiAbandoned3 {
+  background-image: url('../images/abandonedGrafitti/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere1 {
+  background-image: url('../images/downhere/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere2 {
+  background-image: url('../images/downhere/2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere3 {
+  background-image: url('../images/downhere/3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere4 {
+  background-image: url('../images/downhere/4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere5 {
+  background-image: url('../images/downhere/5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere6 {
+  background-image: url('../images/downhere/6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#downhere7 {
+  background-image: url('../images/downhere/7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto1 {
+  background-image: url('../images/linephoto/foto1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto2 {
+  background-image: url('../images/linephoto/foto2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto3 {
+  background-image: url('../images/linephoto/foto3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto5 {
+  background-image: url('../images/linephoto/foto5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto6 {
+  background-image: url('../images/linephoto/foto6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto7 {
+  background-image: url('../images/linephoto/foto7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto8 {
+  background-image: url('../images/linephoto/foto8.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto9 {
+  background-image: url('../images/linephoto/foto9.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto10 {
+  background-image: url('../images/linephoto/foto10.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#linephoto11 {
+  background-image: url('../images/linephoto/foto11.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -365,4 +506,83 @@ path {
   color: white;
   right: 600px;
   display: none;
+}
+@media screen and (max-width: 600px) {
+  .header h2 {
+    font-size: 12px;
+  }
+  .biography {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header h2 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .projectVideo,
+  .projectFoto {
+    height: 75px;
+    width: 200px;
+    background: #FFFFFF;
+    position: fixed;
+    cursor: move;
+    display: grid;
+    -webkit-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 20px 17px rgba(0, 0, 0, 0.75);
+    z-index: 1;
+  }
+  .projectVideo .projectTitle,
+  .projectFoto .projectTitle {
+    float: left;
+    padding: 1px;
+  }
+  .projectVideo .projectControllers,
+  .projectFoto .projectControllers {
+    float: right;
+  }
+  .projectVideo .projectControllers input,
+  .projectFoto .projectControllers input {
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  .projectVideo:hover,
+  .projectFoto:hover {
+    border-radius: 10px;
+    filter: saturate(260%);
+    cursor: move;
+  }
+  .projectVideo.gif,
+  .projectFoto.gif {
+    opacity: 0.9;
+    width: 200px;
+    height: 200px;
+  }
+  .projectVideo.ilustration,
+  .projectFoto.ilustration {
+    opacity: 0.9;
+    width: 170px;
+    height: 200px;
+  }
+  .projectVideo.grafittiVertical,
+  .projectFoto.grafittiVertical {
+    width: 100px;
+    height: 200px;
+  }
+  .projectVideo.grafittiHorizontal,
+  .projectFoto.grafittiHorizontal {
+    width: 200px;
+    height: 100px;
+  }
+  .projectVideo.downhere,
+  .projectFoto.downhere {
+    width: 100px;
+    height: 50px;
+  }
+  .projectVideo.linephoto,
+  .projectFoto.linephoto {
+    width: 100px;
+    height: 50px;
+  }
 }
