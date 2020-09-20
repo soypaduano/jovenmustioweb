@@ -515,10 +515,13 @@ path {
     font-size: 12px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   .header h2 {
     font-size: 13px;
     line-height: 20px;
+  }
+  .biography {
+    font-size: 12px;
   }
   .projectVideo,
   .projectFoto {
