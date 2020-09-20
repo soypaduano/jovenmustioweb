@@ -61,6 +61,10 @@ function saveCanvas() {
   ReImg.fromCanvas(canvas).downloadPng();
 }
 
+function printCanvas(){
+  printJS({printable: document.querySelector("#myCanvas").toDataURL(), type: 'image', imageStyle: 'width:100%'});
+}
+
 function clearCanvas() {
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
@@ -70,6 +74,8 @@ function clearCanvas() {
 let xs = [];
 let t = 0
 $(document).ready(function () {
+  rescalateIframes();
+  
   InitCanvas();
   mobileCheck();
   //Le damos comportamiento a los e
@@ -102,6 +108,7 @@ function mobileCheck() {
   })(navigator.userAgent || navigator.vendor || window.opera);
   if (check) {
     alert("Te recomendamos que para una mejor experiencia de usuario, veas la web desde desktop")
+    $('#buttonPrintCanvas').hide();
   }
 }
 
@@ -247,4 +254,11 @@ function animate() {
   document.querySelector("path").setAttribute("d", path)
   t += 0.7
   requestAnimationFrame(animate);
+}
+
+function rescalateIframes(){
+  if ($(window).width() < 321) {
+    $('iframe').attr("width", 250);
+    $('iframe').attr("height", 125);
+ }
 }

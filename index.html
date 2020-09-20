@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="styles/estilos.css">
     <script src="js/reimg.js"></script>
+    <script src="js/print.min.js"></script>
     <script src="js/controller.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/gif" >
@@ -281,6 +282,7 @@
         <div class="buttons">
             <input type="range" id="canvasStrokeWidth" min=5 max=30 step=5 class="slider">
             <input type="button" value="save canvas" id="buttonSaveCanvas" onclick="saveCanvas()">
+            <input type="button" value="print canvas" id="buttonPrintCanvas" onclick="printCanvas()">
             <input type="color" id="canvasColor">
             <input type="button" value="clean canvas" id="buttonCleanCanvas" onclick="clearCanvas()">
         </div>
