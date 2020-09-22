@@ -22,6 +22,7 @@ function InitCanvas() {
   $('#myCanvas').mouseleave(function (e) {
     mousePressed = false;
   });
+  
 }
 
 function Draw(x, y, isDown) {

@@ -1,8 +1,11 @@
 var mousePressed = false;
+var touchPressed = true;
+var mousePressed = false;
 var lastX, lastY;
 var ctx;
 
 function InitCanvas() {
+  var myCanvas = document.getElementById('myCanvas');
   ctx = document.getElementById('myCanvas').getContext("2d");
 
   $('#myCanvas').mousedown(function (e) {
@@ -22,10 +25,26 @@ function InitCanvas() {
   $('#myCanvas').mouseleave(function (e) {
     mousePressed = false;
   });
+
+  myCanvas.addEventListener('touchstart', function(e) {
+    var touch = e.touches[0];
+      var x = touch.pageX;
+      var y = touch.pageY;
+      Draw(x, y, false);
+});
+  myCanvas.addEventListener('touchmove', function(e) {
+    if(touchPressed){
+      var touch = e.touches[0];
+      var x = touch.pageX;
+      var y = touch.pageY;
+      Draw(x, y, true);
+    }
+    }, 0);
 }
 
 function Draw(x, y, isDown) {
   if (isDown) {
+    console.log("DRAWING! and the x : " + x + " and the y is: " + y);
     ctx.beginPath();
     ctx.strokeStyle = $('#selColor').val();
     ctx.lineWidth = $('#selWidth').val();
@@ -52,7 +71,6 @@ function getSelectedColor() {
 }
 
 function getWidthOfPainting() {
-  console.log($('#canvasStrokeWidth').val());
   return $('#canvasStrokeWidth').val();
 }
 
@@ -92,7 +110,7 @@ $(document).ready(function () {
   $('.projectFoto').hide();
   addListenerToRadio();
   addHoverListenerToRadio();
-  showProjectGarden(); //Mostramos el primero
+  //showProjectGarden(); //Mostramos el primero
   resizeCanvas();
   createExes();
   animate();
@@ -215,67 +233,28 @@ function resizeCanvas() {
 }
 
 function initCanvasMobile(){
-  
-  $('#myCanvas').mousedown(function(e){
-    var mouseX = e.pageX - this.offsetLeft;
-    var mouseY = e.pageY - this.offsetTop;
-      
-    paint = true;
-    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
-    redraw();
-  });
-
-  $('#myCanvas').mousemove(function(e){
-    if(paint){
-      addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-      redraw();
-    }
-  });
-
-  $('#myCanvas').mouseup(function(e){
-    paint = false;
-  });
-
-
-  $('#myCanvas').mouseleave(function(e){
-    paint = false;
-  });
+  /*var myMoveEvent = function (e) {
+    
+        
+            beginPath();
+            moveTo(this.X, this.Y);
+            lineTo(e.pageX , e.pageY );
+            ctx.lineWidth=1;
+            stroke();
+         
+         this.X = e.pageX ;
+         this.Y = e.pageY ;
 }
-
-
-var clickX = new Array();
-var clickY = new Array();
-var clickDrag = new Array();
-var paint;
-
-function addClick(x, y, dragging)
-{
-  clickX.push(x);
-  clickY.push(y);
-  clickDrag.push(dragging);
+var canvas = document.getElementById('myCanvas')
+canvas.addEventListener('mousemove', function(e) {
+  console.log("mouse move");
+        myMoveEvent(e);
+    }, 0)
+  canvas.addEventListener('touchmove', function(e) {
+    console.log("mouse move");
+        myMoveEvent(e);
+    }, 0);*/
 }
-
-function redraw(){
-  var context = document.getElementById('myCanvas').getContext("2d");
-  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-  
-  context.strokeStyle = "#df4b26";
-  context.lineJoin = "round";
-  context.lineWidth = 5;
-			
-  for(var i=0; i < clickX.length; i++) {		
-    context.beginPath();
-    if(clickDrag[i] && i){
-      context.moveTo(clickX[i-1], clickY[i-1]);
-     }else{
-       context.moveTo(clickX[i]-1, clickY[i]);
-     }
-     context.lineTo(clickX[i], clickY[i]);
-     context.closePath();
-     context.stroke();
-  }
-}
-
 
 function percentage(percent, total) {
   return ((percent / 100) * total).toFixed(2)
