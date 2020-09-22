@@ -26,17 +26,19 @@ function InitCanvas() {
     mousePressed = false;
   });
 
+  var rect = myCanvas.getBoundingClientRect();
   myCanvas.addEventListener('touchstart', function(e) {
     var touch = e.touches[0];
-      var x = touch.pageX;
-      var y = touch.pageY;
+    debugger;
+      var x = touch.pageX - rect.left;
+      var y = touch.pageY - rect.top;
       Draw(x, y, false);
 });
   myCanvas.addEventListener('touchmove', function(e) {
     if(touchPressed){
       var touch = e.touches[0];
-      var x = touch.pageX;
-      var y = touch.pageY;
+      var x = touch.pageX - rect.left;
+      var y = touch.pageY - rect.top;
       Draw(x, y, true);
     }
     }, 0);
@@ -233,27 +235,7 @@ function resizeCanvas() {
 }
 
 function initCanvasMobile(){
-  /*var myMoveEvent = function (e) {
-    
-        
-            beginPath();
-            moveTo(this.X, this.Y);
-            lineTo(e.pageX , e.pageY );
-            ctx.lineWidth=1;
-            stroke();
-         
-         this.X = e.pageX ;
-         this.Y = e.pageY ;
-}
-var canvas = document.getElementById('myCanvas')
-canvas.addEventListener('mousemove', function(e) {
-  console.log("mouse move");
-        myMoveEvent(e);
-    }, 0)
-  canvas.addEventListener('touchmove', function(e) {
-    console.log("mouse move");
-        myMoveEvent(e);
-    }, 0);*/
+  //$('#canvasStrokeWidth').slider('value', 5);
 }
 
 function percentage(percent, total) {
