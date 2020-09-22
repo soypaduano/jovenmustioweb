@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <link rel="stylesheet" href="styles/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script src="js/reimg.js"></script>
     <script src="js/print.min.js"></script>
     <script src="js/controller.js"></script>
@@ -281,10 +282,10 @@
     </section>
     <section class="canvasControllers">
         <div class="buttons">
-            <input type="range" id="canvasStrokeWidth" min=5 max=30 step=5 class="slider" value=5>
+            <input type="range" id="canvasStrokeWidth" min=0 max=2.5 step=0.1 class="slider" value=0.5 onchange="changedSlider()">
             <input type="button" value="save canvas" id="buttonSaveCanvas" onclick="saveCanvas()">
             <input type="button" value="print canvas" id="buttonPrintCanvas" onclick="printCanvas()">
-            <input type="color" id="canvasColor">
+            <input type="color" id="canvasColor" onchange="changedColor()">
             <input type="button" value="clean canvas" id="buttonCleanCanvas" onclick="clearCanvas()">
         </div>
         <span class="creator"> developed by <a href="https://github.com/soypaduano"> sebaspaduano (2o2o) </a> </span>

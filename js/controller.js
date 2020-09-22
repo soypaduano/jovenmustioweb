@@ -1,71 +1,52 @@
-var mousePressed = false;
+
+
+/*var mousePressed = false;
 var touchPressed = true;
 var mousePressed = false;
 var lastX, lastY;
-var ctx;
+var ctx;*/
+var signaturePad;
 
-function InitCanvas() {
-  var myCanvas = document.getElementById('myCanvas');
-  ctx = document.getElementById('myCanvas').getContext("2d");
+function initNewCanvas(){
+var canvas = document.querySelector("#myCanvas");
 
-  $('#myCanvas').mousedown(function (e) {
-    mousePressed = true;
-    Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
-  });
+signaturePad = new SignaturePad(canvas);
+// Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible parameters)
+signaturePad.toDataURL(); // save image as PNG
+signaturePad.toDataURL("image/jpeg"); // save image as JPEG
+signaturePad.toDataURL("image/svg+xml"); // save image as SVG
 
-  $('#myCanvas').mousemove(function (e) {
-    if (mousePressed) {
-      Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
-    }
-  });
+// Draws signature image from data URL.
+// NOTE: This method does not populate internal data structure that represents drawn signature. Thus, after using #fromDataURL, #toData won't work properly.
+signaturePad.fromDataURL("data:image/png;base64,iVBORw0K...");
 
-  $('#myCanvas').mouseup(function (e) {
-    mousePressed = false;
-  });
-  $('#myCanvas').mouseleave(function (e) {
-    mousePressed = false;
-  });
+// Returns signature image as an array of point groups
+const data = signaturePad.toData();
 
-  var rect = myCanvas.getBoundingClientRect();
-  myCanvas.addEventListener('touchstart', function(e) {
-    var touch = e.touches[0];
-    debugger;
-      var x = touch.pageX - rect.left;
-      var y = touch.pageY - rect.top;
-      Draw(x, y, false);
-});
-  myCanvas.addEventListener('touchmove', function(e) {
-    if(touchPressed){
-      var touch = e.touches[0];
-      var x = touch.pageX - rect.left;
-      var y = touch.pageY - rect.top;
-      Draw(x, y, true);
-    }
-    }, 0);
+// Draws signature image from an array of point groups
+signaturePad.fromData(data);
+
+// Clears the canvas
+signaturePad.clear();
+
+// Returns true if canvas is empty, otherwise returns false
+signaturePad.isEmpty();
+
+// Unbinds all event handlers
+signaturePad.off();
+
+// Rebinds all event handlers
+signaturePad.on();
 }
 
-function Draw(x, y, isDown) {
-  if (isDown) {
-    console.log("DRAWING! and the x : " + x + " and the y is: " + y);
-    ctx.beginPath();
-    ctx.strokeStyle = $('#selColor').val();
-    ctx.lineWidth = $('#selWidth').val();
-    ctx.lineJoin = "round";
-    ctx.moveTo(lastX, lastY);
-    ctx.lineTo(x, y);
-    ctx.closePath();
-    ctx.strokeStyle = getSelectedColor();
-    ctx.shadowColor = getSelectedColor();
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 0;
-    ctx.shadowBlur = 10;
-    ctx.lineWidth = getWidthOfPainting();
-    ctx.lineJoin = ctx.lineCap = 'round';
-    ctx.stroke();
-  }
+function changedSlider(){
+  signaturePad.minWidth = $('#canvasStrokeWidth').val();
+  signaturePad.maxWidth = $('#canvasStrokeWidth').val();
+  signaturePad.dotSize = $('#canvasStrokeWidth').val() 
+}
 
-  lastX = x;
-  lastY = y;
+function changedColor(){
+  signaturePad.penColor = $('#canvasColor').val();
 }
 
 function getSelectedColor() {
@@ -95,8 +76,8 @@ let xs = [];
 let t = 0
 $(document).ready(function () {
   rescalateIframes();
-  
-  InitCanvas();
+  initNewCanvas();
+  //InitCanvas();
   mobileCheck();
   //Le damos comportamiento a los e
   $(".projectVideo").draggable({
