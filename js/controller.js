@@ -1,10 +1,3 @@
-
-
-/*var mousePressed = false;
-var touchPressed = true;
-var mousePressed = false;
-var lastX, lastY;
-var ctx;*/
 var signaturePad;
 
 function initNewCanvas(){
@@ -15,28 +8,6 @@ signaturePad = new SignaturePad(canvas);
 signaturePad.toDataURL(); // save image as PNG
 signaturePad.toDataURL("image/jpeg"); // save image as JPEG
 signaturePad.toDataURL("image/svg+xml"); // save image as SVG
-
-// Draws signature image from data URL.
-// NOTE: This method does not populate internal data structure that represents drawn signature. Thus, after using #fromDataURL, #toData won't work properly.
-signaturePad.fromDataURL("data:image/png;base64,iVBORw0K...");
-
-// Returns signature image as an array of point groups
-const data = signaturePad.toData();
-
-// Draws signature image from an array of point groups
-signaturePad.fromData(data);
-
-// Clears the canvas
-signaturePad.clear();
-
-// Returns true if canvas is empty, otherwise returns false
-signaturePad.isEmpty();
-
-// Unbinds all event handlers
-signaturePad.off();
-
-// Rebinds all event handlers
-signaturePad.on();
 }
 
 function changedSlider(){
@@ -77,9 +48,7 @@ let t = 0
 $(document).ready(function () {
   rescalateIframes();
   initNewCanvas();
-  //InitCanvas();
   mobileCheck();
-  //Le damos comportamiento a los e
   $(".projectVideo").draggable({
     stack: "div"
   });
@@ -93,7 +62,7 @@ $(document).ready(function () {
   $('.projectFoto').hide();
   addListenerToRadio();
   addHoverListenerToRadio();
-  //showProjectGarden(); //Mostramos el primero
+  showProjectGarden(); //Mostramos el primero
   resizeCanvas();
   createExes();
   animate();
@@ -110,7 +79,6 @@ function mobileCheck() {
   if (check) {
     //alert("Te recomendamos que para una mejor experiencia de usuario, veas la web desde desktop")
     $('#buttonPrintCanvas').hide();
-    initCanvasMobile();
   }
 }
 
@@ -130,6 +98,7 @@ function addHoverListenerToRadio() {
 function addListenerToRadio() {
   for (let i = 1; i < 8; i++) {
     $('#projectRadio' + i).click(function () {
+      if(signaturePad.isEmpty()) alert("pintate algo ahí en el cuadro azul")
       var funcName = $(this).attr("func");
       hideAllProjects();
       window[funcName]();
@@ -213,10 +182,6 @@ function resizeCanvas() {
   var canvas = document.getElementById("myCanvas");
   canvas.width = percentage(90, $(window).width());
   canvas.height = percentage(60, $(window).height())
-}
-
-function initCanvasMobile(){
-  //$('#canvasStrokeWidth').slider('value', 5);
 }
 
 function percentage(percent, total) {

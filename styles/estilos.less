@@ -324,19 +324,19 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
 //Ilustraciones (imagenes)
 #ilustracion1{
   background-image: url('../images/ilustraciones/1.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
 #ilustracion2{
   background-image: url('../images/ilustraciones/2.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
 #ilustracion3{
   background-image: url('../images/ilustraciones/3.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -634,7 +634,7 @@ path{
   }
 
   .projectVideo, .projectFoto {
-    height: 75px;
+    height: 125px;
     width: 200px;
     background: @color-white;
     position: fixed;
@@ -670,7 +670,7 @@ path{
   
     &.ilustration{
       opacity: 0.9;
-      width: 150px;
+      width: 200px;
       height: 300px;
     }
   
@@ -698,6 +698,10 @@ path{
   .projectVideo{
     width: 300px;
     height: 150px;
+  }
+
+  #illustration3{
+    background-size: 90%;
   }
 
 

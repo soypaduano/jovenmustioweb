@@ -264,17 +264,17 @@ header {
 }
 #ilustracion1 {
   background-image: url('../images/ilustraciones/1.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #ilustracion2 {
   background-image: url('../images/ilustraciones/2.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #ilustracion3 {
   background-image: url('../images/ilustraciones/3.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #grafittiAbandoned1 {
@@ -528,7 +528,7 @@ path {
   }
   .projectVideo,
   .projectFoto {
-    height: 75px;
+    height: 125px;
     width: 200px;
     background: #FFFFFF;
     position: fixed;
@@ -568,7 +568,7 @@ path {
   .projectVideo.ilustration,
   .projectFoto.ilustration {
     opacity: 0.9;
-    width: 150px;
+    width: 200px;
     height: 300px;
   }
   .projectVideo.grafittiVertical,
@@ -594,5 +594,8 @@ path {
   .projectVideo {
     width: 300px;
     height: 150px;
+  }
+  #illustration3 {
+    background-size: 90%;
   }
 }
