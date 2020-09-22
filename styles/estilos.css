@@ -565,13 +565,13 @@ path {
   .projectVideo.ilustration,
   .projectFoto.ilustration {
     opacity: 0.9;
-    width: 170px;
-    height: 200px;
+    width: 150px;
+    height: 300px;
   }
   .projectVideo.grafittiVertical,
   .projectFoto.grafittiVertical {
-    width: 100px;
-    height: 200px;
+    width: 150px;
+    height: 300px;
   }
   .projectVideo.grafittiHorizontal,
   .projectFoto.grafittiHorizontal {
@@ -580,16 +580,16 @@ path {
   }
   .projectVideo.downhere,
   .projectFoto.downhere {
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 125px;
   }
   .projectVideo.linephoto,
   .projectFoto.linephoto {
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 150px;
   }
   .projectVideo {
-    width: 250px;
-    height: 125px;
+    width: 300px;
+    height: 150px;
   }
 }
