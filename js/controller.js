@@ -181,7 +181,7 @@ function applyRandomTop(element) {
 function resizeCanvas() {
   var canvas = document.getElementById("myCanvas");
   canvas.width = percentage(90, $(window).width());
-  canvas.height = percentage(60, $(window).height())
+  canvas.height = percentage(50, $(window).height())
 }
 
 function percentage(percent, total) {
