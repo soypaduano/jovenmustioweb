@@ -49,13 +49,10 @@ $(document).ready(function () {
   rescalateIframes();
   initNewCanvas();
   mobileCheck();
-  $(".projectVideo").draggable({
-    stack: "div"
-  });
+  addListenerContactMe();
+  $(".projectVideo").draggable({stack: "div"});
   $('.projectVideo').css('display', "block");
-  $(".projectFoto").draggable({
-    stack: "div"
-  });
+  $(".projectFoto").draggable({stack: "div"});
   $('.projectFoto').css('display', "block");
   //Ocultamos todos:
   $('.projectVideo').hide();
@@ -66,9 +63,15 @@ $(document).ready(function () {
   resizeCanvas();
   createExes();
   animate();
-  $('#title-radio-project').text("Click para ver proyectos ➡️")
+  $('#title-radio-project').text("👉")
 });
 
+
+function addListenerContactMe(){
+  $('#contactHeader').click(function () {
+    goToInstagram();
+  });
+}
 
 
 function mobileCheck() {
@@ -94,15 +97,14 @@ function addHoverListenerToRadio() {
   }
 }
 
-
 function addListenerToRadio() {
   for (let i = 1; i < 8; i++) {
     $('#projectRadio' + i).click(function () {
-      if(signaturePad.isEmpty()) alert("pintate algo ahí en el cuadro azul")
+      //if(signaturePad.isEmpty()) alert("pintate algo ahí en el cuadro azul")
       var funcName = $(this).attr("func");
       hideAllProjects();
       window[funcName]();
-      $('#title-radio-project').text($(this).attr("nameTooltip") + " ➡️")
+      $('#title-radio-project').text($(this).attr("nameTooltip"))
     });
   }
 }

@@ -14,12 +14,6 @@
   cursor: url(data:image/utils/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAMAAAB4HKeYAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAADRJREFUeAFjwAsYsfMYQYgRLsLICKWhskxMTDAmCEMAwhQmEEDho8szUiqPaR+xfIR7sQMAR6QAjICqvMYAAAAASUVORK5CYII=), auto;
   font-family: grotesk;
 }
-input[type=button] {
-  border: 2px solid black;
-}
-input[type=button]:hover {
-  background-color: #103AFA;
-}
 body {
   margin: 0%;
   background: #1b07fd;
@@ -38,7 +32,7 @@ header {
   overflow: hidden;
   background: #ffffff;
   background: radial-gradient(circle, #ffffff 0%, rgba(0, 0, 0, 0.9080007) 46%);
-  border: 1px solid #FFFFFF;
+  border: 2px solid #000000;
 }
 .header h2 {
   position: absolute;
@@ -49,6 +43,7 @@ header {
   text-align: center;
   letter-spacing: 3px;
   font-size: 2.7vh;
+  cursor: pointer;
   /* Starting position */
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
@@ -100,8 +95,7 @@ header {
 .controlsHeader .biography {
   width: 50%;
   color: #000000;
-  border-color: #000000;
-  border-style: double;
+  border: 2px solid black;
   text-align: center;
 }
 .controlsHeader .biography .textBiography {
@@ -118,8 +112,24 @@ header {
 .controlsHeader .left-inputs-container1 {
   width: 50%;
   cursor: pointer;
-  border: 3px double black;
+  border: 2px double black;
   flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 25px;
+}
+.controlsHeader .left-inputs-container1 #title-radio-project {
+  position: relative;
+  bottom: 5px;
+}
+.controlsHeader .left-inputs-container1 .projectEmoji {
+  width: 6%;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.controlsHeader .left-inputs-container1 .projectEmoji:hover {
+  border: 1px solid black;
 }
 .controlsHeader .left-inputs-container1 input {
   display: inline-flex;
@@ -137,9 +147,6 @@ header {
 }
 .controlsHeader .left-inputs-container1 input[type=button] {
   height: 30;
-}
-.controlsHeader .left-inputs-container1 #buttonContactMe:hover {
-  cursor: url('../images/utils/email.png'), pointer;
 }
 .controlsHeader .left-inputs-container1 span {
   margin-left: 3%;
@@ -183,12 +190,10 @@ header {
 }
 .projectVideo .projectControllers input,
 .projectFoto .projectControllers input {
-  border: 2px solid black;
   cursor: pointer;
 }
 .projectVideo:hover,
 .projectFoto:hover {
-  border-radius: 10px;
   filter: saturate(260%);
   cursor: move;
 }
@@ -400,6 +405,12 @@ header {
   background: #103afa;
   background: linear-gradient(120deg, rgba(16, 58, 250, 0.74833683) 7%, rgba(255, 255, 255, 0.47102591) 51%, #1e45fa 98%);
 }
+input[type=button] {
+  border: 2px solid black;
+}
+input[type=button]:hover {
+  background-color: #103AFA;
+}
 input[type=range] {
   -webkit-appearance: none;
   border: 1px solid #000000;
@@ -552,7 +563,6 @@ path {
   }
   .projectVideo:hover,
   .projectFoto:hover {
-    border-radius: 10px;
     filter: saturate(260%);
     cursor: move;
   }
