@@ -86,10 +86,11 @@ function mobileCheck() {
 }
 
 function addHoverListenerToRadio() {
-  for (let i = 1; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     $("#projectRadio" + i).hover(function () {
       $('.tooltipRadio').show();
       let name = $('#projectRadio' + i).attr('nameTooltip');
+      debugger;
       $('.tooltipRadio').text(name);
     }, function () {
       $('.tooltipRadio').hide();
@@ -98,12 +99,13 @@ function addHoverListenerToRadio() {
 }
 
 function addListenerToRadio() {
-  for (let i = 1; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     $('#projectRadio' + i).click(function () {
       //if(signaturePad.isEmpty()) alert("pintate algo ahí en el cuadro azul")
       var funcName = $(this).attr("func");
       hideAllProjects();
       window[funcName]();
+      $(this).removeClass('projectSelection');
       $('#title-radio-project').text($(this).attr("nameTooltip"))
     });
   }

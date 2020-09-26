@@ -113,9 +113,8 @@ header {
   width: 50%;
   cursor: pointer;
   border: 2px double black;
-  flex: 1;
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
   font-size: 25px;
 }
 .controlsHeader .left-inputs-container1 #title-radio-project {
@@ -128,8 +127,11 @@ header {
   text-align: center;
   cursor: pointer;
 }
+.controlsHeader .left-inputs-container1 .projectEmoji.projectSelection {
+  filter: grayscale(1);
+}
 .controlsHeader .left-inputs-container1 .projectEmoji:hover {
-  border: 1px solid black;
+  filter: grayscale(0);
 }
 .controlsHeader .left-inputs-container1 input {
   display: inline-flex;
@@ -517,6 +519,7 @@ path {
   color: white;
   right: 600px;
   display: none;
+  bottom: -28px;
 }
 @media screen and (max-width: 600px) {
   .header h2 {
@@ -530,6 +533,12 @@ path {
   .header h2 {
     font-size: 13px;
     line-height: 20px;
+  }
+  .controlsHeader .left-inputs-container1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .controlsHeader .left-inputs-container1 .projectEmoji {
+    margin: 0px;
   }
   .biography {
     font-size: 12px;

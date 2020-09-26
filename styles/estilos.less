@@ -148,9 +148,8 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
     width: 50%;
     cursor: pointer;
     border: 2px double black;
-    flex: 1;
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
     font-size: 25px;
 
     #title-radio-project{
@@ -163,8 +162,12 @@ background: linear-gradient(90deg, rgba(250,250,16,1) 0%, rgba(255,0,0,0.9080007
       margin: 10px;
       text-align: center;
       cursor: pointer;
+      
+      &.projectSelection{
+        filter: grayscale(1);
+      }
       &:hover{
-        border: 1px solid black;
+        filter: grayscale(0);
       }
     }
 
@@ -619,6 +622,7 @@ path{
   color: white;
   right: 600px;
   display: none;
+  bottom: -28px;
 }
 
 @media screen and (max-width: 600px) {
@@ -637,7 +641,18 @@ path{
     line-height: 20px;
   }
 
-  .curveFooter{
+  .controlsHeader{
+    .left-inputs-container1 {
+      grid-template-columns: repeat(4, 1fr);
+      .projectEmoji{
+        margin: 0px;
+      }
+    }
+  }
+
+
+
+   .curveFooter{
     //display: none;
   }
 
